@@ -1,1 +1,1 @@
-the killer feature is awesome
+the killer feature is awesomer
