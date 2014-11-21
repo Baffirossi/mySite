@@ -1,0 +1,83 @@
+$blue: #9fbfbf;
+$margin: 20%;
+$link: red;
+
+@mixin border-radius($radius: 20px) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+@mixin circle($width, $color)   {
+    width: $width;
+    height: $width;
+background: $color;
+  border-radius: $width/2; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+
+  /* useful if you don't want a bg color from leaking outside the border: */
+  background-clip: padding-box; /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 4+ */
+}
+
+@mixin triangle($width, $dir, $color)   {
+    @if $dir == up {
+        width: 0; height: 0;
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-bottom: $width/2 solid $color;
+    }
+    @if $dir == left {
+        width: 0; height: 0;
+        border-top: $width/2 solid transparent;
+        border-bottom: $width/2 solid transparent;
+        border-right: $width/2 solid $color;
+    }
+    @if $dir == right {
+        width: 0; height: 0;
+        border-top: $width/2 solid transparent;
+        border-bottom: $width/2 solid transparent;
+        border-left: $width/2 solid $color;
+    }
+    @else if $dir == down    {
+        width: 0; height: 0;
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-top: $width/2 solid $color;
+    }
+}
+
+
+.feature    {
+    
+    background-color: lightgrey;
+    
+
+.h1  {
+    color: $blue;
+    margin: $margin;
+    border: none;
+}
+
+
+
+p   {
+    margin: $margin + 9%;
+    @include border-radius;
+    background-color: black;
+    color: white;
+    @extend .h1;
+    
+    a {
+        font-size: 20px;
+        color: $link;
+    }
+}
+}
+
+.circle {
+    background-color: blue;
+    display: block;
+    @include circle(200px, #999);
+}
+
+.triangle   {
+    @include triangle(200px, right, #888); display: block;
+}
