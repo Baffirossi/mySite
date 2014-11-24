@@ -32,6 +32,13 @@
   border-top: 100px solid transparent;
   border-bottom: 100px solid transparent;
   border-left: 100px solid #888;
+  background: linear-gradient(-45deg, #69c8e7 0%, #49d3b4 100%);
+  background: -webkit-linear-gradient(135deg, #69c8e7 0%, #49d3b4 100%);
+  background: -moz-linear-gradient(135deg, #69c8e7 0%, #49d3b4 100%);
+  background: -o-linear-gradient(135deg, #69c8e7 0%, #49d3b4 100%);
+  background: -ms-linear-gradient(135deg, #69c8e7 0%, #49d3b4 100%);
+  background: linear-gradient(-45deg, #69c8e7 0%, #49d3b4 100%);
+  background: url(images/Rounded-Rectangle.png);
   display: block; }
 
 /*# sourceMappingURL=style.css.map */
